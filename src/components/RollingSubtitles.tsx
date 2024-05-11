@@ -3,6 +3,7 @@ import './RollingSubtitles.scss'
 import gsap from 'gsap'
 import {deepClone, gsapScrollTo} from '../utils/index'
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
+import videoPath from '../assets/intro.mp4'
 
 function RollingSubtitles(props: { setActiveTab: (arg0: number) => void; setProgress: (arg0: number) => void }) {
     const [translateY, setTranslateY] = useState(0)
@@ -100,7 +101,7 @@ function RollingSubtitles(props: { setActiveTab: (arg0: number) => void; setProg
     return (
         
         <div className='RollingSubtitles'>
-            <video width='100%' height='100%' className='video' src="http://www.feedmusic.com/videos/intro.mp4" autoPlay muted loop></video>
+            <video width='100%' height='100%' className='video' src={videoPath} autoPlay muted loop></video>
             <div style={{paddingTop: '40vh'}}>
                 {/* 这层控制字幕滚动 */}
                 <div className='subtitle-wrap' style={{transform: `translateY(${translateY}%)`}}>
