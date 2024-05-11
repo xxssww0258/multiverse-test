@@ -1,0 +1,51 @@
+.tabs{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    padding-top: 10px;
+}
+.tab-item{
+    height: 22px;
+    margin-right: 30px;
+    position: relative;
+    color:#fff;
+    cursor: pointer;
+    .tab-item-progress-bar, .tab-item-progress{
+        transition: opacity translateY 0.25s;
+        position: absolute;
+        width: 100%;
+        height: 6px;
+        background: grey;
+        opacity: 0;
+        transform: translateY(6px);
+        border-radius: 1px;
+    }
+    .tab-item-progress{
+        width: 30%;
+        background: #fff;
+    }
+    &.active{
+        .tab-item-progress-bar, .tab-item-progress{
+            opacity: 1;
+            transform: translateY(0px);
+    }   
+    }
+    // pc·端
+    @media screen and (min-width: 768px){
+        &:hover{
+            .tab-item-progress-bar, .tab-item-progress{
+                opacity: 1;
+                transform: translateY(0px);
+            }
+            .tab-item-progress{
+                width: 100%;
+                background: #fff;
+            }
+        }
+    }
+}
